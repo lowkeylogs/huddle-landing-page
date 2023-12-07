@@ -1,4 +1,4 @@
-/* Using reset styles based on Josh W. Comeau's  (https://www.joshwcomeau.com/css/custom-css-reset/) and Andy Bell's (https: //andy-bell.co.uk/a-more-modern-css-reset/) Modern CSS Reset*/
+/* Using reset styles based on Josh W. Comeau's  (https://www.joshwcomeau.com/css/custom-css-reset/) Modern CSS Reset*/
 
 /* Box sizing rules */
 *,
@@ -19,12 +19,6 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
 }
 
 /* Improve media defaults */
@@ -48,11 +42,6 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
 
 /* ====================================================================================*/
 
@@ -60,24 +49,167 @@ ol[role='list'] {
 
 :root {
   --color-primary-500: hsl(300, 69%, 71%);
-  --color-primary-600: hsl(257, 40%, 66%);
+  --color-primary-600: hsl(257, 40%, 49%);
 
   --color-accent-500: hsl(322, 100%, 49%);
 
   --color-neutral-500: hsl(0, 0%, 100%);
 
-  --font-size-400: 12px;
-  --font-size-500: 16px;
-  --font-size-600: 24px;
+  --font-size-400: 0.75rem;
+  --font-size-500: 1rem;
+  --font-size-600: 1.5rem;
 
   --font-weight-500: 400;
   --font-weight-600: 600;
 
 }
 
+/* ====================================================================================*/
+
+/* Main content styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--font-size-500);
+  font-weight: var(--font-weight-500);
+  color: var(--color-neutral-500);
+  background-color: var(--color-primary-600);
+
+  display: grid;
+  place-items: center;
+  background-image: url('./images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+}
+
+.wrapper {
+  display: grid;
+  width: min(100% - 5rem, 80rem);
+  min-height: 100vh;
+  padding-block: 2.5rem;
+}
+
+.header img {
+  max-width: 7.5rem;
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  text-align: center;
+  gap: 3.75rem;
+}
+
+.main__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-size-600);
+  font-weight: var(--font-weight-600);
+}
+
+.main__description {
+  margin-block-start: 1rem;
+  margin-block-end: 1.5rem;
+}
+
+.button {
+  --padding: 0.6875rem 4.6875rem;
+
+  font-family: 'Poppins',
+    sans-serif;
+  font-size: var(--font-size-400);
+  color: var(--color-primary-600);
+  padding: var(--padding);
+
+  border-radius: 1.25rem;
+  border: none;
+  box-shadow: 0.0625rem 0.1875rem 0.3125rem hsla(0, 0%, 0%, 27%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-500);
+}
+
+.footer {
+  align-self: end;
+  justify-self: center;
+}
+
+.footer__list {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  list-style-type: none;
+}
+
+.footer__link {
+  fill: var(--color-neutral-500);
+  width: 1.75rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: 0.0737rem solid var(--color-neutral-500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.footer__link:hover {
+  fill: var(--color-accent-500);
+  border-color: var(--color-accent-500);
+}
+
 @media (min-width: 1024px) {
   :root {
-    --font-size-500: 18px;
-    --font-size-600: 40px;
+    --font-size-500: 1.125rem;
+    --font-size-600: 2.5rem;
+  }
+
+  body {
+    background-image: url('./images/bg-desktop.svg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .wrapper {
+    padding-block: 4rem;
+  }
+
+  .header img {
+    max-width: 12.5rem;
+  }
+
+  .main {
+    text-align: left;
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .button {
+    --padding: 0.875rem 4rem;
+
+    font-size: var(--font-size-500);
+    box-shadow: 0.125rem 0.25rem 0.5625rem 0.1875rem hsla(0, 0%, 0%, 26%);
+    border-radius: 1.75rem;
+  }
+
+  .footer {
+    justify-self: end;
+  }
+
+  .footer__list {
+    gap: 1rem;
+  }
+
+  .footer__link {
+    width: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    padding-inline: 0;
   }
 }
