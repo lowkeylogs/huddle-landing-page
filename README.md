@@ -6,5 +6,5 @@ This is a solution to the [Huddle landing page with single introductory section 
 
 ### Links
 
-- Solution URL: [Huddle Landing Page Solution](https://your-solution-url.com)
+- Solution URL: [Huddle Landing Page Solution](https://www.frontendmentor.io/solutions/huddle-landing-page-uJC_Agggzt)
 - Live Site URL: [https://amgnim.github.io/huddle-landing-page/](https://amgnim.github.io/huddle-landing-page/)
