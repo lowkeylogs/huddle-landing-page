@@ -53,3 +53,31 @@ ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
+
+/* ====================================================================================*/
+
+/* Custom properties */
+
+:root {
+  --color-primary-500: hsl(300, 69%, 71%);
+  --color-primary-600: hsl(257, 40%, 66%);
+
+  --color-accent-500: hsl(322, 100%, 49%);
+
+  --color-neutral-500: hsl(0, 0%, 100%);
+
+  --font-size-400: 12px;
+  --font-size-500: 16px;
+  --font-size-600: 24px;
+
+  --font-weight-500: 400;
+  --font-weight-600: 600;
+
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-500: 18px;
+    --font-size-600: 40px;
+  }
+}
